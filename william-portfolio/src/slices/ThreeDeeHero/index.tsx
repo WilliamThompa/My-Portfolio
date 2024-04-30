@@ -62,6 +62,7 @@ const ThreeDeeHero = ({ slice }: ThreeDeeHeroProps): JSX.Element => {
   return (
     <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation} ref={component}>
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
+      <Shapes />
         <div className="col-start-1 md:row-start-1">
           <h1 className="mb-8 text-[clamp(3rem,15vmin,15rem)] font-extrabold leading-none tracking-tighter" aria-label={slice.primary.first_name + " " + slice.primary.last_name} >
             <span className="block text-blue-100">{renderletter(slice.primary.first_name, "first")}</span>
