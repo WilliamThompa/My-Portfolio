@@ -69,7 +69,7 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = BiographySlice;
+type PageDocumentDataSlicesSlice = TechListSlice | BiographySlice;
 
 /**
  * Content for Page documents
@@ -375,6 +375,76 @@ export type BiographySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TechList → Primary*
+ */
+export interface TechListSliceDefaultPrimary {
+  /**
+   * Heding field in *TechList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.primary.heding
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heding: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *TechList → Items*
+ */
+export interface TechListSliceDefaultItem {
+  /**
+   * Tech Name field in *TechList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.items[].tech_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tech_name: prismic.KeyTextField;
+
+  /**
+   * Tech Color field in *TechList → Items*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_list.items[].tech_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  tech_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for TechList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TechListSliceDefaultPrimary>,
+  Simplify<TechListSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TechList*
+ */
+type TechListSliceVariation = TechListSliceDefault;
+
+/**
+ * TechList Shared Slice
+ *
+ * - **API ID**: `tech_list`
+ * - **Description**: TechList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TechListSlice = prismic.SharedSlice<
+  "tech_list",
+  TechListSliceVariation
+>;
+
+/**
  * Primary content in *ThreeDeeHero → Primary*
  */
 export interface ThreeDeeHeroSliceDefaultPrimary {
@@ -463,6 +533,11 @@ declare module "@prismicio/client" {
       BiographySliceDefaultPrimary,
       BiographySliceVariation,
       BiographySliceDefault,
+      TechListSlice,
+      TechListSliceDefaultPrimary,
+      TechListSliceDefaultItem,
+      TechListSliceVariation,
+      TechListSliceDefault,
       ThreeDeeHeroSlice,
       ThreeDeeHeroSliceDefaultPrimary,
       ThreeDeeHeroSliceVariation,

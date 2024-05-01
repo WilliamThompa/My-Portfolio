@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heding": {
+				"__TYPE__": "FieldContent",
+				"value": "however",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"tech_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "stage",
+							"type": "Text"
+						}
+					],
+					[
+						"tech_color",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "#cb4a0e",
+							"type": "Color"
+						}
+					]
+				]
+			}
+		]
+	}
+]
