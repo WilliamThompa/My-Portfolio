@@ -11,13 +11,13 @@ export default async function Header() {
             <nav>
                 <ul>
                     <li>
-                        <Link href="/" aria-label='Home Page'>
+                        <Link href="/" aria-label="Home Page">
                             {settings.data.name}
                         </Link>
                     </li>
 
-                    {settings.data.nav_item.map(({link, label}) => (
-                        <li>
+                    {settings.data.nav_item.map(({link, label}, index) => (
+                        <li key={index}>
                             <PrismicNextLink field={link}>
                                 {label}
                             </PrismicNextLink>

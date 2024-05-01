@@ -1,3 +1,4 @@
+import Avatar from "@/components/Avatar";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
@@ -28,7 +29,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         </div>
         <Button linkField={slice.primary.button_link} label={slice.primary.button_text}/>
 
-        <PrismicNextImage
+        <Avatar image={slice.primary.avatar} className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"/>
       </div>
     </Bounded>
   );
