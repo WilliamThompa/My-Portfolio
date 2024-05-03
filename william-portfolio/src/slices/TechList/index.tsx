@@ -9,8 +9,8 @@ import { SliceComponentProps } from "@prismicio/react";
 import Heading from "@/components/Heading";
 import Bounded from "@/components/Bounded";
 
-import { gsap } from "gsap/gsap-core";
-import { ScrollTrigger } from "gsap/all";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -27,7 +27,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           markers: true,
           start: "top bottom",
           end: "bottom top",
-          scrub: 4,
+          scrub: 10,
         }
       })
 
