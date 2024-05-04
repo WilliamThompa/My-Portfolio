@@ -56,7 +56,8 @@ function Geometries() {
         new THREE.MeshStandardMaterial({ color: 0x535c68, roughness: 0.7, metalness: 0.2}),
         new THREE.MeshStandardMaterial({ color: 0x0fb9b1, roughness: 0.1}),
         new THREE.MeshStandardMaterial({ color: 0xa55eea, roughness: 0, metalness: 0.5}),
-        new THREE.MeshStandardMaterial({ color: 0xfed330, roughness: 0.2})
+        new THREE.MeshStandardMaterial({ color: 0xfed330, roughness: 0.2}),
+        new THREE.MeshStandardMaterial({ color: 0xff1d8e, roughness: 0.4, metalness: 0.5})
     ]
 
     const soundEffects = [
